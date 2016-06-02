@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core'
+import { Component, Input } from 'angular2/core'
 import { LikeComponent } from './like.component'
 
 @Component({
@@ -6,19 +6,22 @@ import { LikeComponent } from './like.component'
     template: `
         <div class="media">
             <div class="media-left">
-                <img class="media-object" src="http://lorempixel.com/100/100/people?1" alt="Tweet Image">
+                <img class="media-object" src="{{ data.imgUrl }}" alt="Tweet Image">
             </div>
             <div class="media-body">
                 <div class="media-heading">
-                    <h4 class="author">Jess Rascal</h4>
-                    <h4 class="username">@JessRascal</h4>
+                    <h4 class="author">{{ data.author }}</h4>
+                    <h4 class="username">{{ data.username }}</h4>
                 </div>
-                <div class="tweet-text">This is just a test tweet so don't even look at it.</div>
-                <like></like>
+                <div class="tweet-text">{{ data.tweetText }}</div>
+                <like [totalLikes]="data.totalLikes" [hasLiked]="data.hasLiked"></like>
             </div>
         </div>
     `,
     styles: [`
+        .media {
+            margin: 20px;
+        }
         .media-object {
             border-radius: 5px;
         }
@@ -32,9 +35,10 @@ import { LikeComponent } from './like.component'
         .author, .username {
             display: inline-block;
         }
-    `]
+    `],
+    directives: [ LikeComponent ]
 })
 
 export class TweetComponent {
-    
+    @Input() data;
 }

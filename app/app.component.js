@@ -1,4 +1,4 @@
-System.register(['angular2/core', './tweet.component', './tweet.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './zippy.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,28 @@ System.register(['angular2/core', './tweet.component', './tweet.service'], funct
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, tweet_component_1, tweet_service_1;
+    var core_1, zippy_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (tweet_component_1_1) {
-                tweet_component_1 = tweet_component_1_1;
-            },
-            function (tweet_service_1_1) {
-                tweet_service_1 = tweet_service_1_1;
+            function (zippy_component_1_1) {
+                zippy_component_1 = zippy_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(tweetService) {
-                    this.tweets = tweetService.getTweets();
+                function AppComponent() {
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n            <div class=\"container-fluid\">\n                <div *ngFor=\"#tweet of tweets\">\n                    <tweet [data]=\"tweet\"></tweet>\n                </div>\n            </div>\n            ",
+                        template: "\n            <div class=\"container-fluid\">\n            \n                <zippy title = \"Test Title\">\n                    <div class=\"body\">\n                        This is the test body content.\n                    </div>\n                </zippy>\n                <zippy title = \"Second Zippy\">\n                    <div class=\"body\">\n                        There is nothing of interest here.\n                    </div>\n                </zippy>\n                \n            </div>\n            ",
                         styles: ["\n              .container-fluid {\n                  margin: 30px;\n              }  \n            "],
-                        directives: [tweet_component_1.TweetComponent],
-                        providers: [tweet_service_1.TweetService]
+                        directives: [zippy_component_1.ZippyComponent]
                     }), 
-                    __metadata('design:paramtypes', [tweet_service_1.TweetService])
+                    __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             }());

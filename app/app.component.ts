@@ -1,14 +1,22 @@
-import { Component } from 'angular2/core';
-import { TweetComponent } from './tweet.component'
-import { TweetService } from './tweet.service'
+import { Component } from 'angular2/core'
+import { ZippyComponent } from './zippy.component'
 
 @Component({
     selector: 'my-app',
     template: `
             <div class="container-fluid">
-                <div *ngFor="#tweet of tweets">
-                    <tweet [data]="tweet"></tweet>
-                </div>
+            
+                <zippy title = "Test Title">
+                    <div class="body">
+                        This is the test body content.
+                    </div>
+                </zippy>
+                <zippy title = "Second Zippy">
+                    <div class="body">
+                        There is nothing of interest here.
+                    </div>
+                </zippy>
+                
             </div>
             `,
     styles: [`
@@ -16,13 +24,8 @@ import { TweetService } from './tweet.service'
                   margin: 30px;
               }  
             `],
-    directives: [ TweetComponent ],
-    providers: [ TweetService ]
+    directives: [ ZippyComponent ]
 })
 export class AppComponent {
-    tweets: any[];
     
-    constructor(tweetService: TweetService) {
-        this.tweets = tweetService.getTweets();
-    }
 }

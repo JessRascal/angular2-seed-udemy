@@ -11,30 +11,30 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ContactFormComponent;
+    var SubscriptionFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            ContactFormComponent = (function () {
-                function ContactFormComponent() {
+            SubscriptionFormComponent = (function () {
+                function SubscriptionFormComponent() {
                 }
-                ContactFormComponent.prototype.onSubmit = function (form) {
-                    console.log(form);
+                SubscriptionFormComponent.prototype.onSubscribe = function (form) {
+                    console.log(form.value);
                 };
-                ContactFormComponent = __decorate([
+                SubscriptionFormComponent = __decorate([
                     core_1.Component({
-                        selector: 'contact-form',
-                        templateUrl: 'app/contact-form.component.html'
+                        selector: 'subscription-form',
+                        templateUrl: 'app/subscription-form.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ContactFormComponent);
-                return ContactFormComponent;
+                ], SubscriptionFormComponent);
+                return SubscriptionFormComponent;
             }());
-            exports_1("ContactFormComponent", ContactFormComponent);
+            exports_1("SubscriptionFormComponent", SubscriptionFormComponent);
         }
     }
 });
-//# sourceMappingURL=contact-form.component.js.map
+//# sourceMappingURL=subscription-form.component.js.map

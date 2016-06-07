@@ -1,12 +1,14 @@
-import { Component } from 'angular2/core'
-import { SubscriptionFormComponent } from './subscription-form.component'
+///<reference path="../typings/index.d.ts"/>
+
+import {Component} from 'angular2/core';
+import {SignUpFormComponent} from './signup-form.component'
 
 @Component({
     selector: 'my-app',
-    directives: [ SubscriptionFormComponent ],
-    template: `            
-            <subscription-form></subscription-form>
-            `
+    directives: [SignUpFormComponent],
+    template: `
+        <signup-form></signup-form>
+    `
 })
 export class AppComponent {
 }

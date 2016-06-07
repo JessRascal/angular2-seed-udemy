@@ -24,6 +24,9 @@ System.register(['angular2/core', './contact-form.component'], function(exports_
             AppComponent = (function () {
                 function AppComponent() {
                 }
+                AppComponent.prototype.log = function (x) {
+                    console.log(x);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',

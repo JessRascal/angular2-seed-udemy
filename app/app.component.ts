@@ -11,5 +11,7 @@ import { ContactFormComponent } from './contact-form.component'
             </div>`
 })
 export class AppComponent {
-
+    log(x) {
+        console.log(x);
+    }
 }

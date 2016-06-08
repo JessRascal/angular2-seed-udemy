@@ -20,17 +20,17 @@ export class PasswordFormComponent {
                 Validators.minLength(5)
                 ])],
             confirm: ['', Validators.compose([
-                Validators.required,
-                PasswordMatchValidator.passwordsShouldMatch
+                Validators.required
             ])]
-        })
+        }, { validator: PasswordMatchValidator.passwordsShouldMatch });
     }
     
     changePassword() {
-        if (this.form.find('current').value != "1234") {
-            console.log("Invalid old password");
-        } else {
+        var currentPassword = this.form.find('current');
+        if (currentPassword.value != '1234')
+            currentPassword.setErrors({ validCurrentPassword: true });
+
+        if (this.form.valid)
             alert("Successfully changed password");
-        }
     }
 }

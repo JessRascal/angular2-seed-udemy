@@ -1,5 +1,5 @@
 ///<reference path="../typings/index.d.ts"/>
-System.register(['angular2/core', './signup-form.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './password-form.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,15 +11,15 @@ System.register(['angular2/core', './signup-form.component'], function(exports_1
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, signup_form_component_1;
+    var core_1, password_form_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (signup_form_component_1_1) {
-                signup_form_component_1 = signup_form_component_1_1;
+            function (password_form_component_1_1) {
+                password_form_component_1 = password_form_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -28,8 +28,8 @@ System.register(['angular2/core', './signup-form.component'], function(exports_1
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [signup_form_component_1.SignUpFormComponent],
-                        template: "\n        <signup-form></signup-form>\n    "
+                        directives: [password_form_component_1.PasswordFormComponent],
+                        template: "\n        <password-form></password-form>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

@@ -11,7 +11,8 @@
             <div *ngIf="username.control.pending">Checking for uniqueness...</div>
             
         <div *ngIf="username.touched && username.errors">
-            <div *ngIf="username.errors.invalidLogin"
+            <div
+                *ngIf="username.errors.invalidLogin"
                 class="alert alert-danger">
                 Your credentials are invalid.
             </div>

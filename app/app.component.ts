@@ -1,13 +1,13 @@
 ///<reference path="../typings/index.d.ts"/>
 
-import {Component} from 'angular2/core';
-import {SignUpFormComponent} from './signup-form.component'
+import { Component } from 'angular2/core';
+import { PasswordFormComponent } from './password-form.component'
 
 @Component({
     selector: 'my-app',
-    directives: [SignUpFormComponent],
+    directives: [ PasswordFormComponent ],
     template: `
-        <signup-form></signup-form>
+        <password-form></password-form>
     `
 })
 export class AppComponent {

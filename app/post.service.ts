@@ -15,17 +15,17 @@ export class PostService {
     }
 
     // Observable method.
-    // getPosts() : Observable<Post[]> {
-    //     return this._http.get(this._url)
-    //         .map(res => res.json());
-    // }
+    getPosts() : Observable<Post[]> {
+        return this._http.get(this._url)
+            .map(res => res.json());
+    }
 
     // Promise method.
-    getPosts() : Promise<Post[]> {
-        return this._http.get(this._url)
-            .map(res => res.json())
-            .toPromise();
-    }
+    // getPosts() : Promise<Post[]> {
+    //     return this._http.get(this._url)
+    //         .map(res => res.json())
+    //         .toPromise();
+    // }
 
     createPost(post: Post) {
         return this._http.post(this._url, JSON.stringify(post))

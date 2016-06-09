@@ -29,16 +29,16 @@ System.register(['angular2/http', 'rxjs/add/operator/map', 'rxjs/add/operator/to
                     this._url = "http://jsonplaceholder.typicode.com/posts";
                 }
                 // Observable method.
-                // getPosts() : Observable<Post[]> {
-                //     return this._http.get(this._url)
-                //         .map(res => res.json());
-                // }
-                // Promise method.
                 PostService.prototype.getPosts = function () {
                     return this._http.get(this._url)
-                        .map(function (res) { return res.json(); })
-                        .toPromise();
+                        .map(function (res) { return res.json(); });
                 };
+                // Promise method.
+                // getPosts() : Promise<Post[]> {
+                //     return this._http.get(this._url)
+                //         .map(res => res.json())
+                //         .toPromise();
+                // }
                 PostService.prototype.createPost = function (post) {
                     return this._http.post(this._url, JSON.stringify(post))
                         .map(function (res) { return res.json(); });

@@ -1,17 +1,8 @@
-import { Component } from 'angular2/core';
-import { ControlGroup, FormBuilder } from 'angular2/common';
-import { Observable } from 'rxjs/Rx';
-import { GithubProfileComponent } from './github-profile.component';
+import {Component} from 'angular2/core';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <github-profile></github-profile>
-        `,
-    directives: [ GithubProfileComponent ]
+    templateUrl: '/app/app.component.html'
 })
 export class AppComponent {
-    constructor() {
-        
-    }
 }

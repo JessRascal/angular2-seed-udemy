@@ -11,38 +11,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AutoGrowDirective;
+    var ContactComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AutoGrowDirective = (function () {
-                function AutoGrowDirective(el, renderer) {
-                    this.el = el;
-                    this.renderer = renderer;
+            ContactComponent = (function () {
+                function ContactComponent() {
                 }
-                AutoGrowDirective.prototype.onFocus = function () {
-                    this.renderer.setElementStyle(this.el.nativeElement, 'width', '200');
+                ContactComponent.prototype.onSubmit = function (form) {
+                    console.log(form);
                 };
-                AutoGrowDirective.prototype.onBlur = function () {
-                    this.renderer.setElementStyle(this.el.nativeElement, 'width', '120');
-                };
-                AutoGrowDirective = __decorate([
-                    core_1.Directive({
-                        selector: '[autoGrow]',
-                        host: {
-                            '(focus)': 'onFocus()',
-                            '(blur)': 'onBlur()'
-                        }
+                ContactComponent = __decorate([
+                    core_1.Component({
+                        templateUrl: '/app/contact.component.html'
                     }), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
-                ], AutoGrowDirective);
-                return AutoGrowDirective;
+                    __metadata('design:paramtypes', [])
+                ], ContactComponent);
+                return ContactComponent;
             }());
-            exports_1("AutoGrowDirective", AutoGrowDirective);
+            exports_1("ContactComponent", ContactComponent);
         }
     }
 });
-//# sourceMappingURL=auto-grow.directive.js.map
+//# sourceMappingURL=contact.component.js.map

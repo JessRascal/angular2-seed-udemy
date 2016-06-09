@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1;
-    var GithubService;
+    var PhotoService;
     return {
         setters:[
             function (core_1_1) {
@@ -22,30 +22,27 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
             },
             function (_1) {}],
         execute: function() {
-            GithubService = (function () {
-                function GithubService(_http) {
+            PhotoService = (function () {
+                function PhotoService(_http) {
                     this._http = _http;
-                    this._githubRootUrl = "https://api.github.com";
-                    this._userUrl = this._githubRootUrl + "/users/";
+                    this._url = "http://jsonplaceholder.typicode.com/albums";
                 }
-                GithubService.prototype.getUser = function (user) {
-                    var userUrl = this._userUrl + user;
-                    return this._http.get(userUrl)
+                PhotoService.prototype.getAlbums = function () {
+                    return this._http.get(this._url)
                         .map(function (res) { return res.json(); });
                 };
-                GithubService.prototype.getFollowers = function (user) {
-                    var followersUrl = this._userUrl + user + "/followers";
-                    return this._http.get(followersUrl)
+                PhotoService.prototype.getPhotos = function (id) {
+                    return this._http.get(this._url + "/" + id + "/photos")
                         .map(function (res) { return res.json(); });
                 };
-                GithubService = __decorate([
+                PhotoService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], GithubService);
-                return GithubService;
+                ], PhotoService);
+                return PhotoService;
             }());
-            exports_1("GithubService", GithubService);
+            exports_1("PhotoService", PhotoService);
         }
     }
 });
-//# sourceMappingURL=github.service.js.map
+//# sourceMappingURL=photo.service.js.map

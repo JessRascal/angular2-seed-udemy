@@ -1,14 +1,22 @@
-///<reference path="../typings/index.d.ts"/>
-
 import { Component } from 'angular2/core';
-import { PasswordFormComponent } from './password-form.component'
+import { PostService } from './post.service';
+import { HTTP_PROVIDERS } from 'angular2/http';
+import { OnInit } from 'angular2/core';
 
 @Component({
     selector: 'my-app',
-    directives: [ PasswordFormComponent ],
     template: `
-        <password-form></password-form>
-    `
+        
+    `,
+    providers: [ PostService, HTTP_PROVIDERS ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    constructor(private _postService: PostService) {
+        
+    }
+
+    ngOnInit() {
+        this._postService.getPosts()
+            .subscribe(posts => console.log(posts[0].id));
+    }
 }

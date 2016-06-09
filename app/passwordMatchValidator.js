@@ -9,11 +9,13 @@ System.register([], function(exports_1, context_1) {
                 function PasswordMatchValidator() {
                 }
                 PasswordMatchValidator.passwordsShouldMatch = function (group) {
-                    var newPassword = group.find('new');
-                    var confirmPassword = group.find('confirm');
-                    if (confirmPassword !== newPassword) {
-                        return { passwordsMatch: false };
-                    }
+                    var newPassword = group.find('new').value;
+                    var confirmPassword = group.find('confirm').value;
+                    if (newPassword === '' || confirmPassword === '')
+                        return null;
+                    // If the 'confirm password' value doesn't match the 'new password' value then validation fails.
+                    if (confirmPassword !== newPassword)
+                        return { passwordsShouldMatch: true };
                     return null;
                 };
                 return PasswordMatchValidator;

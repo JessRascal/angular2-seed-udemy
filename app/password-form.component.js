@@ -35,18 +35,16 @@ System.register(['angular2/core', 'angular2/common', './passwordMatchValidator']
                                 common_1.Validators.minLength(5)
                             ])],
                         confirm: ['', common_1.Validators.compose([
-                                common_1.Validators.required,
-                                passwordMatchValidator_1.PasswordMatchValidator.passwordsShouldMatch
+                                common_1.Validators.required
                             ])]
-                    });
+                    }, { validator: passwordMatchValidator_1.PasswordMatchValidator.passwordsShouldMatch });
                 }
                 PasswordFormComponent.prototype.changePassword = function () {
-                    if (this.form.find('current').value != "1234") {
-                        console.log("Invalid old password");
-                    }
-                    else {
+                    var currentPassword = this.form.find('current');
+                    if (currentPassword.value != '1234')
+                        currentPassword.setErrors({ validCurrentPassword: true });
+                    if (this.form.valid)
                         alert("Successfully changed password");
-                    }
                 };
                 PasswordFormComponent = __decorate([
                     core_1.Component({

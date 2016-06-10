@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 @Component({
     selector: 'home-screen',
@@ -6,14 +7,28 @@ import { Component } from 'angular2/core';
         <h2>Home Page</h2>
         <ul>
             <li *ngFor="#post of blogPosts">
-            <a href="">
-                {{ post }}
+            <a [routerLink]="['Blog Post', { year: post.year, month: post.month }]">
+                {{ post.year }}/{{ post.month }}
             </a>
             </li>
         </ul>
-    `
+    `,
+    directives: [ ROUTER_DIRECTIVES ]
 })
 
 export class HomeComponent {
-    blogPosts = ["2016/1", "2016/2", "2016/3"];
+    blogPosts = [
+        {
+            year: "2016",
+            month: "1"
+        },
+        {
+            year: "2016",
+            month: "2"
+        },
+        {
+            year: "2016",
+            month: "3"
+        }
+        ]
 }

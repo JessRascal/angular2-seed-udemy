@@ -33,8 +33,8 @@ System.register(['angular2/core', 'angular2/router', './home.component', './blog
                 AppComponent = __decorate([
                     router_1.RouteConfig([
                         { path: '/', name: 'Home', component: home_component_1.HomeComponent },
-                        { path: 'archive/:year/:month', name: 'Blog Post', component: blog_post_component_1.BlogPostComponent },
-                        { path: '*/other', name: 'Other', redirectTo: ['Home'] }
+                        { path: '/archive/:year/:month', name: 'Blog Post', component: blog_post_component_1.BlogPostComponent },
+                        { path: '/*other', name: 'Other', redirectTo: ['Home'] }
                     ]),
                     core_1.Component({
                         selector: 'my-app',

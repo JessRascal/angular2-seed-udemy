@@ -6,8 +6,8 @@ import { BlogPostComponent } from './blog-post.component';
 
 @RouteConfig([
     { path: '/', name: 'Home', component: HomeComponent },
-    { path: 'archive/:year/:month', name: 'Blog Post', component: BlogPostComponent },
-    { path: '*/other', name: 'Other', redirectTo: ['Home'] }
+    { path: '/archive/:year/:month', name: 'Blog Post', component: BlogPostComponent },
+    { path: '/*other', name: 'Other', redirectTo: ['Home'] }
 ])
 @Component({
     selector: 'my-app',
